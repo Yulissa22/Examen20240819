@@ -1,0 +1,37 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Crear nuevo producto</h1>
+    <form th:action="@{/productos/save}" th:object="${producto}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nameEYCD}" id="nambre" placeholder="Escriba el nombre del producto" required>
+                </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Descripcion</label>
+                    <input type="text" class="form-control" th:field="*{descriptionEYCD}" id="description" placeholder="Escriba la descripcion del producto">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="price">Precio</label>
+                <input type="text" class="form-control" th:field="*{priceEYCD}" id="price" placeholder="Escriba el precio del producto" required>
+            </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="expire">Fecha de expiracion</label>
+                <input type="text" class="form-control" th:field="*{expireEYCD}" id="expire" placeholder="Escriba la fecha de expiracion del producto">
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar</button> |
+        <a th:href="@{/productos}">Regresar</a>
+    </form>
+</div>
